@@ -1,10 +1,6 @@
-package maths_test
+package smath
 
-import (
-	"testing"
-
-	"github.com/sasimpson/gotilites"
-)
+import "testing"
 
 func TestRoundDown(t *testing.T) {
 	cases := []struct {
@@ -15,7 +11,7 @@ func TestRoundDown(t *testing.T) {
 		{12249, 2, 12200},
 	}
 	for _, c := range cases {
-		got := maths.RoundInt(c.in, c.places)
+		got := RoundInt(c.in, c.places)
 		if got != c.result {
 			t.Errorf("didn't round down correctly %d to %d places should be %d", c.in, c.places, c.result)
 		}
@@ -32,7 +28,7 @@ func TestRoundUp(t *testing.T) {
 		{13781, 4, 10000},
 	}
 	for _, c := range cases {
-		got := maths.RoundInt(c.in, c.places)
+		got := RoundInt(c.in, c.places)
 		if got != c.result {
 			t.Errorf("didn't round up correctly %d to %d places should be %d", c.in, c.places, c.result)
 		}
